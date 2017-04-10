@@ -1,0 +1,19 @@
+﻿@model IEnumerable<LogAzure.Models.AppLog>
+
+@{
+    ViewBag.Title = "Query";
+}
+
+
+<h2>Query</h2>
+
+<ol>
+    @foreach (var m in Model)
+    {
+
+            <li>
+                @m.PartitionKey| @m.RowKey | @m.Timestamp.ToLocalTime()
+            </li>
+
+    }
+</ol>
